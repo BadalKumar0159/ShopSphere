@@ -14,7 +14,7 @@ const addProduct = async (req, res) => {
         const img3 = req.files.image3 && req.files.image3[0];
         const img4 = req.files.image4 && req.files.image4[0];
 
-        const images = [img1, img2, img3, img4].filter((item) => item != undefined);
+        const images = [img1, img2, img3, img4].filter((item) => item !== undefined);
 
         //upload images to cloudinary and get back their urls
         let imagesUrl = await Promise.all(
@@ -40,7 +40,7 @@ const addProduct = async (req, res) => {
         const product = new productModel(productData);
         await product.save();
 
-        res.json({ success: true, message: "Product Added" });
+        res.json({ success: true, message: "Product Added Successfully" });
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: error.message });
