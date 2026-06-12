@@ -22,6 +22,7 @@ const Cart = () => {
     console.log(tempData);
     setCartData(tempData);
   }, [cartItems])
+  
   return (
     <div className='border-t pt-14'>
       <div className='text-2xl mb-3'>
