@@ -6,7 +6,7 @@ const placeOrder = async (req, res) => {
     try{
         const {userId, items, amount, address} = req.body;
         const orderData = {
-            userId, items, address, 
+            userId, items, address, amount,
             paymentMethod: "COD",
             payment: false,
             date: Date.now()
@@ -18,14 +18,16 @@ const placeOrder = async (req, res) => {
         await userModel.findByIdAndUpdate(userId, {cartData: {}});  //clear cart of user
         res.json({success: true, message: "Order Placed"});
     }catch(error){
-        cosole.log(error);
+        console.log(error);
         res.json({success: false, message: error.message});
     }
 }
+
 // Placing orders using Stripe method
 const placeOrderStripe = async (req, res) => {
 
 }
+
 // Placing orders using Razorpay method
 const placeOrderRazorpay = async (req, res) => {
 
