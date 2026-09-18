@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Slate & Purple Theme Gradient -->
+    <linearGradient id="shopsphere-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="100%" stop-color="#6b21a8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded App Icon Background -->
+  <rect width="512" height="512" rx="115" fill="url(#shopsphere-grad)" />
+
+  <!-- Outer Sphere Orbit Line -->
+  <path d="M 130 260 C 130 160, 210 120, 310 120 C 390 120, 440 180, 440 260 C 440 340, 380 400, 270 400 C 200 400, 160 360, 160 310" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="32" 
+        stroke-linecap="round" />
+
+  <!-- Shopping Cart Body -->
+  <path d="M 175 185 L 210 185 L 250 310 L 365 310 L 395 210 L 230 210" 
+        fill="none" 
+        stroke="#ffffff" 
+        stroke-width="32" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+
+  <!-- Cart Wheels -->
+  <circle cx="255" cy="355" r="18" fill="#ffffff" />
+  <circle cx="355" cy="355" r="18" fill="#ffffff" />
+</svg>

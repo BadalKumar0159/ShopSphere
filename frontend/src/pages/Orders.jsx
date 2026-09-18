@@ -18,7 +18,7 @@ const Orders = () => {
           response.data.orders.map((order) => {
             order.items.map((item) => {       //item is individual order
               item['status'] = order.status;  //these info are not present inside item so take from outside
-              item['payment'] = order.paymet;
+              item['payment'] = order.payment;
               item['paymentMethod'] = order.paymentMethod;
               item['data'] = order.date;
 

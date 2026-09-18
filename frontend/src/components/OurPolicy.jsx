@@ -2,27 +2,37 @@ import React from 'react'
 import { assets } from '../assets/assets'
 
 const OurPolicy = () => {
-  return (
-    <div className='flex flex-col sm:flex-row justify-around gap-1 sm:gap-2 text-center 
-                    py-20 text-xs sm:text-sm md:text-base text-gray-700'>
-        <div className="">
-            <img className='w-12 m-auto mb-5' src={assets.exchange_icon} alt="" />
-            <p className='font-semibold'> Easy Exchange Policy</p>
-            <p className='text-gray-400'>We offer hassle free exchange policy</p>
+    const policies = [
+        { icon: assets.exchange_icon, title: 'Easy Exchange Policy', description: 'We offer a hassle-free exchange policy.' },
+        { icon: assets.quality_icon, title: '7 Days Return Policy', description: 'Enjoy a simple and convenient return process.' },
+        { icon: assets.support_img, title: 'Best Customer Support', description: "We're here whenever you need assistance." }
+    ]
+
+    return (
+        <div className='grid grid-cols-1 sm:grid-cols-3 gap-5 py-14'>
+            {policies.map((policy, index) => (
+                <div key={index} className='group text-center bg-white border border-slate-200 rounded-xl px-5 py-8 overflow-hidden 
+                transition-all duration-300 hover:-translate-y-1 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/60'>
+
+                    {/* Icon */}
+                    <div className='w-14 h-14 mx-auto mb-5 flex items-center justify-center rounded-full bg-violet-50 group-hover:bg-violet-100 transition-colors duration-300'>
+                        <img className='w-8 h-8 object-contain group-hover:scale-110 transition-transform duration-300' src={policy.icon} alt={policy.title} />
+                    </div>
+
+                    {/* Title */}
+                    <p className='font-semibold text-slate-900 text-sm sm:text-base group-hover:text-violet-700 transition-colors duration-300'>
+                        {policy.title}
+                    </p>
+
+                    {/* Description */}
+                    <p className='text-slate-500 text-xs sm:text-sm mt-2 leading-6 max-w-xs mx-auto'>
+                        {policy.description}
+                    </p>
+
+                </div>
+            ))}
         </div>
-        <div className="">
-            <img className='w-12 m-auto mb-5' src={assets.quality_icon} alt="" />
-            <p className='font-semibold'>7 days Return Policy </p>
-            <p className='text-gray-400'>we provide 7 days free return policy</p>
-        </div>
-        <div className="">
-            <img className='w-12 m-auto mb-5' src={assets.support_img} alt="" />
-            <p className='font-semibold'> Best Customer Support</p>
-            <p className='text-gray-400'>We provide 24/7 customer support </p>
-        </div>
-        
-    </div>
-  )
+    )
 }
 
 export default OurPolicy
