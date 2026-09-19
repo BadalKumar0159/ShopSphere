@@ -7,7 +7,7 @@ const Navbar = () => {
 
    const [visible, setVisible] = useState(false);
    const [activeTab, setActiveTab] = useState('home');
-   const { setShowSearch, getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
+   const {getCartCount, navigate, token, setToken, setCartItems } = useContext(ShopContext);
 
    const logout = () => {
       navigate('/login')
@@ -16,8 +16,8 @@ const Navbar = () => {
       setCartItems({});
    }
 
-   return (
-      <div className='shadow-[0_4px_4px_-2px_rgba(0,0,0,0.05)] px-2 flex items-center justify-between py-4 font-medium border-b border-slate-300'>
+   return ( <div className='shadow-[0_4px_4px_-2px_rgba(0,0,0,0.05)] px-2 flex items-center justify-between py-4 font-medium border-b border-slate-300'>
+     
          <Link to='/' onClick={() => setActiveTab('home')}>
             <img src="fullLogo.png" className='w-38' alt="ShopSphere Logo" />
          </Link>
@@ -44,9 +44,6 @@ const Navbar = () => {
 
          {/* Actions & Utilities */}
          <div className='flex items-center gap-2 sm:gap-6'>
-            {/* Search Icon */}
-            <Search onClick={() => setShowSearch(true)} strokeWidth={1.5} className='w-6 h-6 text-slate-700 cursor-pointer hover:text-violet-700 transition-colors' />
-
             {/* Profile & Dropdown */}
             <div className="group relative">
                <User onClick={() => token ? null : navigate('/login')} strokeWidth={1.5}

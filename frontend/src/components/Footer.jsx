@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <footer className='mt-18 border-t-1 border-slate-300 pt-10 px-4'>
+        <footer className='border-t border-slate-300 shadow-[0_-4px_4px_-2px_rgba(0,0,0,0.05)] mt-18 pt-10 px-4'>
 
             <div className='flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-12 sm:gap-14 my-10 text-sm'>
 
@@ -64,7 +64,7 @@ const Footer = () => {
 
             </div>
 
-            <div className='border-t border-slate-200'>
+            <div className='border-t border-slate-300'>
                 <p className='py-5 text-xs sm:text-sm text-center text-slate-500'>
                     © 2026 ShopSphere. All rights reserved.
                 </p>
