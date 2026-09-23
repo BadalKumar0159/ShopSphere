@@ -15,22 +15,13 @@ const NewsLetterBox = () => {
             <p className='text-sm text-slate-500 mt-3 max-w-md mx-auto'>
                 Subscribe to get exclusive offers, new arrivals, and updates delivered straight to your inbox.
             </p>
+            <form onSubmit={onSubmitHandler} className='w-full sm:w-[500px] flex items-center mx-auto mt-7 border border-slate-300 bg-white 
+            rounded-md overflow-hidden focus-within:border-violet-500 transition-colors' >
+                <input type='email' className='flex-1 min-w-0 px-4 py-3.5 outline-none text-sm text-slate-900 placeholder:text-slate-400' 
+                placeholder='Enter your email address' required />
 
-            <form
-                onSubmit={onSubmitHandler}
-                className='w-full sm:w-[500px] flex items-center mx-auto mt-7 border border-slate-200 bg-white rounded-md overflow-hidden focus-within:border-violet-500 transition-colors'
-            >
-                <input
-                    className='flex-1 min-w-0 px-4 py-3.5 outline-none text-sm text-slate-900 placeholder:text-slate-400'
-                    type='email'
-                    placeholder='Enter your email address'
-                    required
-                />
-
-                <button
-                    className='bg-violet-600 text-white text-xs font-medium tracking-wide px-6 sm:px-8 py-4 hover:bg-violet-700 transition-colors'
-                    type='submit'
-                >
+                <button type='submit' className='bg-violet-600 text-white text-xs font-medium tracking-wide px-6 sm:px-8 py-4 
+                hover:bg-violet-700 transition-colors' >
                     SUBSCRIBE
                 </button>
             </form>

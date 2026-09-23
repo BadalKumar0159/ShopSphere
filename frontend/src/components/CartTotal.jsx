@@ -1,31 +1,46 @@
 import React, { useContext } from 'react'
 import { ShopContext } from '../context/ShopContext'
-import Title from './Title';
+import { ReceiptText } from 'lucide-react'
+import Title from './Title'
 
 const CartTotal = () => {
-    const { currency, delivery_fee, getCartAmount } = useContext(ShopContext);
+    const { currency, delivery_fee, getCartAmount } = useContext(ShopContext)
+
+    const subtotal = getCartAmount()
+    const total = subtotal === 0 ? 0 : subtotal + delivery_fee
+
     return (
         <div className='w-full'>
-            <div className='text-2xl'>
-                <Title text1={'CART'} text2={'TOTALS'} />
+            <div className='flex items-center gap-2 mb-4'>
+                <ReceiptText size={20} className='text-violet-600 mb-3' />
+                <Title text1={'Cart'} text2={'Totals'} />
             </div>
 
-            <div className='flex flex-col gap-2 mt-2 text-sm'>
-                <div className='flex justify-between'>
+            <div className='space-y-4 text-sm'>
+                <div className='flex justify-between text-slate-600'>
                     <p>Subtotal</p>
-                    <p>{currency}{getCartAmount()}.00</p>
+                    <p className='font-medium text-slate-900'>
+                        {currency} {subtotal}.00
+                    </p>
                 </div>
-                <hr />
-                <div className='flex justify-between'>
+
+                <div className='flex justify-between text-slate-600'>
                     <p>Shipping Fee</p>
-                    <p>{currency}{delivery_fee}.00</p>
+                    <p className='font-medium text-slate-900'>
+                        {currency} {delivery_fee}.00
+                    </p>
                 </div>
-                <hr />
-                <div className='flex justify-between'>
-                    <p>Total</p>
-                    <p>{currency}{getCartAmount() === 0? 0: getCartAmount() + delivery_fee}.00</p>
+
+                <div className='border-t border-slate-200 pt-4'>
+                    <div className='flex justify-between items-center'>
+                        <p className='text-base font-semibold text-slate-900'>
+                            Total
+                        </p>
+                        <p className='text-xl font-bold text-slate-900'>
+                            {currency} {total}.00
+                        </p>
+                    </div>
                 </div>
-                <hr />
             </div>
         </div>
     )

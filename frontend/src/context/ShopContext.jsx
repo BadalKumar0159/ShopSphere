@@ -77,6 +77,8 @@ const ShopContextProvider = (props) => {
         let totalAmount = 0;
         for (const items in cartItems) {
             let itemInfo = products.find((product) => product._id === items);
+            // Product data may not be loaded yet
+            if (!itemInfo) continue;
             for (const item in cartItems[items]) {
                 if (cartItems[items][item] > 0)
                     totalAmount += itemInfo.price * cartItems[items][item];
@@ -85,8 +87,8 @@ const ShopContextProvider = (props) => {
         return totalAmount;
     }
 
-
-    const getProductsData = async () => {   //fetch products from data base
+     // API call: Fetch products from data base
+    const getProductsData = async () => {  
         try {
             const response = await axios.get(backendUrl + '/api/product/list');
             if (response.data.success) {
@@ -102,11 +104,13 @@ const ShopContextProvider = (props) => {
         }
     }
 
-    const getUserCart = async (token) => {    //fetch cart data from database
+    // API call: Fetch cart data from database 
+    const getUserCart = async (token) => {    
         try {
             const response = await axios.post(backendUrl + '/api/cart/get', {}, { headers: { token } });
             if (response.data.success) {
                 setCartItems(response.data.cartData)
+                console.log(response.data.cartData)
             } else {
                 console.log(response.data.message);
             }
@@ -117,19 +121,19 @@ const ShopContextProvider = (props) => {
     }
 
     useEffect(() => {
-        getProductsData();
+        getProductsData();                                  // API call
     }, [])
 
     useEffect(() => {
         if (!token && localStorage.getItem('token')) {
             setToken(localStorage.getItem('token'))
-            getUserCart(localStorage.getItem('token'));
+            getUserCart(localStorage.getItem('token'));     // API call
         }
     }, [])
 
     const value = {
-        products, currency, delivery_fee, cartItems, addToCart, getCartCount, updateQuantity, getCartAmount, navigate, 
-        backendUrl, token, setToken, setCartItems
+        products, currency, delivery_fee, cartItems,  backendUrl, token, addToCart, getCartCount, 
+        updateQuantity, getCartAmount, navigate, setToken, setCartItems
     }
 
     return (
