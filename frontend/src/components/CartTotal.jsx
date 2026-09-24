@@ -12,7 +12,7 @@ const CartTotal = () => {
     return (
         <div className='w-full'>
             <div className='flex items-center gap-2 mb-4'>
-                <ReceiptText size={20} className='text-violet-600 mb-3' />
+                <ReceiptText size={20} className='text-violet-600' />
                 <Title text1={'Cart'} text2={'Totals'} />
             </div>
 

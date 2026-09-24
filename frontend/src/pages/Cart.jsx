@@ -20,7 +20,6 @@ const Cart = () => {
             }
          }
       }
-      console.log(tempData);
       setCartData(tempData);
    }, [cartItems])
 
@@ -75,7 +74,7 @@ const Cart = () => {
          </div>
 
          <div className='flex justify-end mt-20'>
-            <div className='w-full sm:w-[450px] border border-slate-200 bg-white p-6 rounded-lg  transition-all duration-300 hover:border-violet-200 hover:shadow-lg hover:shadow-violet-100/60'>
+            <div className='w-full sm:w-[450px] border border-slate-300 bg-white p-6 rounded-lg'>
                <CartTotal />
                <div className='w-full text-right pt-5'>
                   <button onClick={() => navigate('/place-order')} className='bg-violet-600 hover:bg-violet-700 text-white text-sm px-8 py-3 rounded-lg transition-all'>PROCEED TO CHECKOUT</button>

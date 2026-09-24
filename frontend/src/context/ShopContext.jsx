@@ -21,19 +21,19 @@ const ShopContextProvider = (props) => {
             return;
         }
         let cartData = structuredClone(cartItems);
-        if (cartData[itemId]) {
+        if (cartData[itemId]) {     // If this item already exist in cart
             if (cartData[itemId][size])
                 cartData[itemId][size] += 1;
             else
                 cartData[itemId][size] = 1;
         }
-        else {
+        else {                      // Item not present in cart earlier
             cartData[itemId] = {};
             cartData[itemId][size] = 1;
         }
         setCartItems(cartData);
 
-        if (token) {         // update cart in database 
+        if (token) {                // update cart in database 
             try {
                 await axios.post(backendUrl + '/api/cart/add', { itemId, size }, { headers: { token } });
             } catch (error) {

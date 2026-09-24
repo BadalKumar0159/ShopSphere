@@ -6,7 +6,7 @@ import { BadgeCheck, Headset, ShoppingBag } from 'lucide-react'
 const About = () => {
   return (
     <div>
-      <div className='text-2xl text-center pt-8'>
+      <div className='text-2xl text-center pt-8 mb-3'>
         <Title text1 = {'ABOUT'} text2 = {'US'} />
       </div>
 
@@ -20,7 +20,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className='text-xl py-4'>
+      <div className='text-xl py-4 mb-1'>
         <Title text1={'WHY'} text2={'CHOOSE US ?'} />
       </div>
       <div className='flex flex-col md:flex-row text-sm mb-20 gap-5 text-slate-700 text-center'>

@@ -75,7 +75,7 @@ const Collection = () => {
 
    return (
       <div>
-         <div className='text-2xl text-center pt-8'>
+         <div className='text-2xl text-center pt-8 mb-6'>
             <Title text1={'ALL'} text2={'COLLECTIONS'} />
          </div>
 
