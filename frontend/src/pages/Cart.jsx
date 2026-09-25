@@ -24,8 +24,8 @@ const Cart = () => {
    }, [cartItems])
 
    return (
-      <div className=' pt-14'>
-         <div className='text-2xl mb-4 text-left'>
+      <div className=' pt-16'>
+         <div className='text-2xl mb-4 text-left '>
             <Title text1={'YOUR'} text2={'CART'} />
          </div>
 

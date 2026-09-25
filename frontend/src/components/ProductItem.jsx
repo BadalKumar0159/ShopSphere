@@ -17,8 +17,6 @@ const ProductItem = ({ id, image, name, price }) => {
             <p className='text-sm text-slate-700 group-hover:text-violet-950'>
                 {name}
             </p>
-
-
         </Link>
     )
 }
