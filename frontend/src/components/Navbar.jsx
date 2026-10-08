@@ -70,8 +70,8 @@ const Navbar = () => {
 
             {/* Mobile Menu Icon */}
             <Menu 
-               onClick={() => setVisible(true)} 
-               className="stroke-1 w-5 h-5 text-slate-700 cursor-pointer sm:hidden hover:text-violet-600 transition-colors" 
+               onClick={() => setVisible(true)} strokeWidth={1.5}
+               className="w-6 h-6 text-slate-700 cursor-pointer sm:hidden hover:text-violet-600 transition-colors" 
             />
          </div>
 
